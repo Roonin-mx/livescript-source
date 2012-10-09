@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name      = 'livescript-source'
-  s.version   = '1.0.0'
+  s.version   = '1.0.1'
   s.date      = '2012-09-04'
 
   s.homepage    = "http://github.com/Roonin-mx/livescript-source"
