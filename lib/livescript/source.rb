@@ -1,3 +1,5 @@
+require "livescript/source/version"
+
 module LiveScript
   module Source
     def self.bundled_path
