@@ -1,28 +1,32 @@
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'livescript/source/version'
+require_relative 'lib/livescript/source/version'
 
-Gem::Specification.new do |spec|
-  spec.name          = "livescript-source"
-  spec.version       = Livescript::Source::VERSION
-  spec.authors       = ["Victor Hugo Borja", "tomchentw"]
-  spec.email         = ["vic.borja@gmail.com", "developer@tomchentw.com"]
-  spec.summary       = %q{Provide a compiler for Livescript.}
-  spec.description   = %q{LiveScript is a language which compiles to JavaScript. 
-    It is a fork of Coco which is in turn derived from CoffeeScript. 
-    Like those two it has a relatively straightforward mapping to JavaScript. 
-    LiveScript is Coco but much more compatible with CoffeeScript, 
-    more functional, and more feature rich. 
-    LiveScript aims for increased expressiveness and code beauty.
+Gem::Specification.new do |s|
+  s.name     = 'livescript-source'
+  s.version  = LiveScript::Source::VERSION
+  s.authors  = ['Victor Hugo Borja', 'tomchentw', 'Bian Jiaping']
+  s.email    = ['vic.borja@gmail.com', 'developer@tomchentw.com', 'ssbianjp@gmail.com']
+  s.homepage = 'https://github.com/Roonin-mx/livescript-source'
+  s.license  = 'MIT'
+
+  s.summary       = 'Wrapper of LiveScript official node.js compiler.'
+  s.description   = %q{LiveScript is a language which compiles to JavaScript.
+    It has a straightforward mapping to JavaScript and allows you to write expressive code devoid of repetitive boilerplate.
+    While LiveScript adds many features to assist in functional style programming,
+    it also has many improvements for object oriented and imperative programming.
   }
-  spec.homepage      = "https://github.com/Roonin-mx/livescript-source"
-  spec.license       = "MIT"
 
-  spec.files         = Dir["lib/**/*"]
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  s.files = Dir[
+    'lib/**/*',
+    'test/**/*',
+    'Rakefile',
+    'LICENSE',
+    'README.md',
+  ]
 
-  spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
+  s.post_install_message = "Notice:\n  livescript-source >= 1.4.0 only work with livescript-ruby >= 2.3.0"
+
+  s.add_development_dependency 'bundler', '~> 1.11'
+  s.add_development_dependency 'rake', '~> 11.1'
+  s.add_development_dependency 'minitest', '~> 5.8'
+  s.add_development_dependency 'execjs', '~> 2.6'
 end

@@ -1,5 +1,5 @@
-module Livescript
+module LiveScript
   module Source
-    VERSION = "1.2.0"
+    VERSION = '1.4.0.rc.1'
   end
 end
