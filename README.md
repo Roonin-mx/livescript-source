@@ -1,26 +1,39 @@
-# Livescript::Source
+# LiveScript::Source
 
-A fork of `coffee-script-source` to provide a compiler for
-`LiveScript`. This gem version is in sync with the `LiveScript`
-compiler version it provides.
+[LiveScript](http://livescript.net) source files used for compiling LiveScript to javascript in ruby.
 
-## Installation
+## Version strategy
 
-Add this line to your application's Gemfile:
+The git tags and gem versions keep in sync with LiveScript compiler version it provides.
 
-    gem 'livescript-source'
+But with one exception: the `rc` part.
 
-And then execute:
+Since [rubygems.org](https://rubygems.org) doesn't allow re-push a version, and doesn't support release number, there is no way to fix bugs or add new features without breaking the version consistency with LiveScript. We use `rc` as release number to solve this problem.
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install livescript-source
+Each time LiveScipt releases a new version, say 1.4.0, we will release this gem as `1.4.0.rc.1`. When bugs are fixed or new features are added, we'll release a new version of `1.4.0.rc.2`, and then `1.4.0.rc.3`, `1.4.0.rc.4`, ...
 
 ## Usage
 
-Use this with [livescript-rails](https://github.com/Roonin-mx/livescript-rails).
+It's used as a dependency by [livescript gem](https://github.com/Roonin-mx/livescript-ruby).
+
+It's not recommended to install it directly.
+
+Instead, install [livescript](https://github.com/Roonin-mx/livescript-ruby), and it will pick up an appropriate version of this gem to install.
+
+## Maintaining
+
+```
+# update LiveScript source file
+./update [VERSION]
+
+# test
+bundle exec rake test
+
+# push to rubygems.org
+gem push livescript-source-[VERSION].gem
+```
+
+VERSION should be tags in [gkz/LiveScript](https://github.com/gkz/LiveScript/).
 
 ## Contributing
 
@@ -29,3 +42,7 @@ Use this with [livescript-rails](https://github.com/Roonin-mx/livescript-rails).
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## License
+
+MIT
