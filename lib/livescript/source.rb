@@ -3,7 +3,7 @@ require_relative 'source/version'
 module LiveScript
   module Source
     def self.bundled_path
-      raise 'livescript-source >= 1.3.0 only work with livescript-ruby >= 2.3.0!'
+      raise 'livescript-source >= 1.4.0 only work with livescript-ruby >= 2.3.0!'
     end
 
     def self.raw_contents
