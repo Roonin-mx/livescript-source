@@ -29,6 +29,9 @@ Instead, install [livescript](https://github.com/Roonin-mx/livescript-ruby), and
 # test
 bundle exec rake test
 
+# build
+gem build livescript-source.gemspec
+
 # push to rubygems.org
 gem push livescript-source-[VERSION].gem
 ```

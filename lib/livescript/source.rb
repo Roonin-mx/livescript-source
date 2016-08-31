@@ -15,7 +15,7 @@ module LiveScript
     def self.contents
       filepath = File.expand_path('../livescript.js', __FILE__)
       # LiveScript >= 1.3 does not expose `LiveScript`
-      File.read(filepath) + "var LiveScript = require('LiveScript');"
+      File.read(filepath) + "var LiveScript = require('livescript');"
     end
   end
 end
