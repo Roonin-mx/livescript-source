@@ -6,11 +6,9 @@
 
 The git tags and gem versions keep in sync with LiveScript compiler version it provides.
 
-But with one exception: the `rc` part.
+If for some reason (like packaging error) we need to republish a same version, we'll add a forth segment to the version (eg. 1.5.0.__1__).
 
-Since [rubygems.org](https://rubygems.org) doesn't allow re-push a version, and doesn't support release number, there is no way to fix bugs or add new features without breaking the version consistency with LiveScript. We use `rc` as release number to solve this problem.
-
-Each time LiveScipt releases a new version, say 1.4.0, we will release this gem as `1.4.0.rc.1`. When bugs are fixed or new features are added, we'll release a new version of `1.4.0.rc.2`, and then `1.4.0.rc.3`, `1.4.0.rc.4`, ...
+Fortunately LiveScript itself only use three-segment version numbers.
 
 ## Usage
 
